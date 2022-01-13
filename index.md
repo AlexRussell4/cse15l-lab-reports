@@ -16,10 +16,11 @@ Is simple [Link] https://alexrussell4.github.io/cse15l-lab-reports/aya.md
 
 ## Other Stuff?
 ![Image](http://url/a.png) 
+
 Listtttt
-*a
-*b
-*c
+*ab
+*bc
+*cd
 
 Code:
 ```
