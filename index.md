@@ -22,6 +22,8 @@ Listtttt
 - bc
 - cd
 
+**bold**
+
 Code:
 ```
 a
@@ -29,4 +31,10 @@ a
 
 Horiz???
 ---
+
+## Random: 
+blah
+```
+Console.WriteLine("hi");
+```
 
