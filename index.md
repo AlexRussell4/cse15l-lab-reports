@@ -18,9 +18,9 @@ Is simple [Link] https://alexrussell4.github.io/cse15l-lab-reports/aya.md
 ![Image](http://url/a.png) 
 
 Listtttt
--ab
--bc
--cd
+- ab
+- bc
+- cd
 
 Code:
 ```
