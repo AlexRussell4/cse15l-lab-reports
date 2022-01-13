@@ -9,7 +9,7 @@ Current contents of webpage:
 2. Ayaya
 
 **How to ayaya?** 
-Is simple (https://alexrussell4.github.io/cse15l-lab-reports/aya.md)
+Is simple [Here](https://alexrussell4.github.io/cse15l-lab-reports/aya.md)
 > ayaya
 -*me, unfortunately*
 
