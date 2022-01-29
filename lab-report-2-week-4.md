@@ -31,7 +31,7 @@ To address this, this code change makes it so that a getLinks call to any test m
 <img src="CodeChange2.png" alt="VS Code" width="960" height="540"/>
 
 [**Link**](https://github.com/AlexRussell4/markdown-parse/blob/main/test-file2.md) to the test file (failure-inducing input) that prompted me to make this change.    
-The first issue I noticed here was that the method would never reach the end of the file or the while loop if there was text after the last link. 
+An issue I noticed here was that the method would never reach the end of the file or the while loop if there was text after the last link. 
 
 
 **Output/Symptom:**       
@@ -56,7 +56,7 @@ This avoids the bug where currentIndex only traverses the markdown string throug
 <img src="CodeChange3.png" alt="VS Code" width="960" height="540"/>
 
 [**Link**](https://github.com/AlexRussell4/markdown-parse/blob/main/test-file5.md) to the test file (failure-inducing input) that prompted me to make this change.    
-The first issue I noticed here was that the method would identify a link too far after the [] in the markdown file. 
+An issue I noticed here was that the method would identify a link too far after the [] in the markdown file. 
 
 
 **Output/Symptom:**       
