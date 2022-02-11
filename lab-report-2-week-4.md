@@ -11,14 +11,10 @@
 The first issue I noticed here was that the method would try to run normally on this file (even though it doesn't have "(" or ")" 
 
 
-**Output/Symptom:**       
-There were 6 failures:    
-3) test4(MarkdownParseTest)
-java.lang.StringIndexOutOfBoundsException: begin 0, end -1, length 28       
-        at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4601)       
-        at java.base/java.lang.String.substring(String.java:2704)       
-        at MarkdownParse.getLinks(MarkdownParse.java:20)       
-        at MarkdownParseTest.test4(MarkdownParseTest.java:64)  
+**Output/Symptom:**     
+Example of relevant failed test in picture: 3rd failed test (test4 in file)
+
+<img src="fail1.png" alt="failure1" width="960" height="540"/>  
         
 **Description**:     
 A failure-inducing input resulting from files like test-file4.md is that the method getLinks tries to run normally on a file that can't have any valid links due to not even having the four critical link characters: "**(**" "**)**" "**[**" and "**]**".    
@@ -35,14 +31,9 @@ An issue I noticed here was that the method would never reach the end of the fil
 
 
 **Output/Symptom:**       
-There were 3 failures:    
-1\) test2(MarkdownParseTest)     
-java.lang.OutOfMemoryError: Java heap space      
-        at java.base/java.util.Arrays.copyOfRange(Arrays.java:3822)     
-        at java.base/java.lang.StringLatin1.newString(StringLatin1.java:769)     
-        at java.base/java.lang.String.substring(String.java:2709)     
-        at MarkdownParse.getLinks(MarkdownParse.java:20)     
-        at MarkdownParseTest.test2(MarkdownParseTest.java:52)      
+Example of relevant failed test in picture: 1st failed test (test2 in file)    
+
+<img src="fail2.png" alt="failure2" width="960" height="540"/>      
         
 **Description**:     
 A failure-inducing input resulting from files like test-file2.md is that the method getLinks tries to only consider links even if the markdown file has non-link text after the last link.     .    
@@ -60,14 +51,9 @@ An issue I noticed here was that the method would identify a link too far after 
 
 
 **Output/Symptom:**       
-There was 1 failure:    
-1\) test5(MarkdownParseTest)     
-java.lang.AssertionError: expected:<[]> but was:<[page.com]>     
-        at org.junit.Assert.fail(Assert.java:89)     
-        at org.junit.Assert.failNotEquals(Assert.java:835)    
-        at org.junit.Assert.assertEquals(Assert.java:120)    
-        at org.junit.Assert.assertEquals(Assert.java:146)    
-        at MarkdownParseTest.test5(MarkdownParseTest.java:71)      
+Example of relevant failed test in picture: 1st failed test (test5 in file)    
+
+<img src="fail3.png" alt="failure3" width="960" height="540"/>
         
 **Description**:     
 A failure-inducing input resulting from files like test-file5.md is that the method getLinks tries to pick out a link in () anytime after a link name in [], even if the () is separated from the [] to the point of the characters not resulting in a valid link..    
