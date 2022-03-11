@@ -36,7 +36,7 @@ The output of my implementation (left) and the output of the given implementatio
 Now, I will go over the bug(s) in my implementation of MarkdownParse that caused the infinite loop.
 In the picture below, I show my implementation of getLinks() in MarkdownParse (left) alongside the test file 481.md (right).
 
-This time, the bug is not one that "breaks" the program like the infinite loop. In this case, the symptom is my implementation returning a link that has undesireable properties such as containing spaces and lacking a "link ending". The way to fix this issue would be to check each substring (at line 27 of my getLinks method) for undesireable properties BEFORE it is added to the list of links that is returned. For example, this could be done with if statements that check to see whether there is whitespace (bad) or link endings like .com or .html (good) in the substring that getLinks in considering adding to the returned list.
+This time, the bug is not one that "breaks" the program like the infinite loop. In this case, the symptom is my implementation returning a link that has undesireable properties such as containing spaces and lacking a "link ending" like ".com" or ".html". The way to fix this issue would be to check each potential link substring (at line 27 of my getLinks method) for undesireable properties BEFORE it is added to the list of links that is returned. For example, this could be done with if statements that check to see whether there is whitespace (bad) or link endings like .com or .html (good) in the substring that getLinks is considering adding to the returned list.
 
 <img src="testfix2.png" alt="testfix1" width="960" height="540"/>
 
