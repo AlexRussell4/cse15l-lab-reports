@@ -28,17 +28,21 @@ Since openParen==-1 indicates that there are no more open parentheses in the fil
 
 By manually comparing the results of saving the output of `bash script.sh` for both implementations of MarkdownParse, I found that my MarkdownParse returned a list of links consisting of `/uri "title"` for test file 481.md while the provided implementation of MarkdownParse returned an empty list.
 The "correct way" here depends on which behavior you want; my implementation correctly identifies the use of link syntax in 481.md and returns the text from between the parentheses, and the provided implementation likely did not return the text between the parentheses because it identified the text as not providing a proper link.
-In this case, I'll argue that my interpretation was the incorrect one because typing in the "link" returned would not be a valid way of getting to a website, so the returned result should've been an empty list (no valid links in the file).
-The output of my implementation (left) and the output of the given implementation (middle) can be seen in the image below alongside test file 182.md (right).
+In this case, I'll argue that my interpretation was incorrect, and the provided implementation was correct, because typing in the "link" returned by my implementation would not be a valid way of getting to a website, so the returned result should've been an empty list (indicating no valid links in the file).
+The output of my implementation (left) and the output of the given implementation (middle) can be seen in the image below alongside test file 481.md (right).
 
 <img src="testdifference2.png" alt="testdiff1" width="960" height="540"/>
 
 Now, I will go over the bug(s) in my implementation of MarkdownParse that caused the infinite loop.
 In the picture below, I show my implementation of getLinks() in MarkdownParse (left) alongside the test file 481.md (right).
 
-Wheld likelyopenParen==-1.
+This time, the bug is not one that "breaks" the program like the infinite loop. In this case, the symptom is my implementation returning a link that has undesireable properties such as containing spaces and lacking a "link ending". The way to fix this issue would be to check each substring (at line 27 of my getLinks method) for undesireable properties BEFORE it is added to the list of links that is returned. For example, this could be done with if statements that check to see whether there is whitespace (bad) or link endings like .com or .html (good) in the substring that getLinks in considering adding to the returned list.
 
 <img src="testfix2.png" alt="testfix1" width="960" height="540"/>
+
+
+## Conclusion:
+Clearly, between infinite loops and undesireable output, my MarkdownParse has several issues that need to be addressed before it could be called "complete". However, some of those edge cases and bugs would have been very difficult to find without the ability to test many test files at once. Therefore, I recognize the utility of the techniques for testing many files at once that we've covered in the last few weeks.
 
 
 
